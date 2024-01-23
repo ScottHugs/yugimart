@@ -33,13 +33,38 @@ app.get('/market', (req, res) => {
 
         const items_for_sale = result.rows
 
+        const sqlToGetUsers = `SELECT * FROM users;`
+
+        db.query(sqlToGetUsers, (err, users) => {
+
+        })
+
         res.render('market', {items: items_for_sale})
     })
 
 })
 
-app.get('/market/item', (req, res) => {
-    res.render('item')
+app.get('/market/item/:id', (req, res) => {
+
+    const id = req.params.id
+    const sql = `
+      SELECT * FROM singles
+      WHERE id = $1;
+    `
+    console.log(`id is ${id}`)
+
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+
+        const itemDetails = result.rows[0]
+
+        console.log(itemDetails)
+
+        res.render('item', {item: itemDetails})
+
+    })
 })
 
 

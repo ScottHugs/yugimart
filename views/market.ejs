@@ -1,0 +1,64 @@
+<h2>All Cards for Sale:</h2>
+
+<table class="singles-table">
+    <thead>
+        <tr>
+            <th>Card Name</th>
+            <th>Set</th>
+            <th>Rarity</th>
+            <th>Condition</th>
+            <th>Language</th>
+            <th>Seller</th>
+            <th>Price</th>
+            <th>BUY</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (let item of items) { %>
+            <tr>
+                <th><%= item.card_name %></th>
+                <th><%= item.set %></th>
+                <th><%= item.rarity %></th>
+                <th><%= item.condition %></th>
+                <th><%= item.language %></th>
+                <th>scalperScottyTemp</th>
+                <th><%= item.price %></th>
+                <th>
+                    <form action="/market/item">
+                        <button>item</button>
+                    </form>
+                </th>
+
+            </tr>
+            
+        <% } %>
+        <!-- <tr>
+            <th>Blue Eyes White Dragon</a></th>
+            <th>LOB-001</th>
+            <th>UR</th>
+            <th>NM</th>
+            <th>ENG</th>
+            <th>scottyScalper</th>
+            <th>$5000</th>
+            <th>
+                <form action="/market/item">
+                    <button>item</button>
+                </form>
+            </th>
+        </tr>
+        <tr>
+            <th>Dark Magician</th>
+            <th>LOB-005</th>
+            <th>UR</th>
+            <th>NM</th>
+            <th>ENG</th>
+            <th>scottyScalper</th>
+            <th>$4000</th>
+            <th>
+                <form action="/market/item">
+                    <button>item</button>
+                </form>
+            </th>
+        </tr> -->
+    </tbody>
+</table>

@@ -1,6 +1,6 @@
 <h2>edit item</h2>
 
-<form action="/market/item/<%= item.id%>?_method=put" method="post" name="item-entry-form">
+<form action="/market/item/<%= item.id%>?_method=put" method="post" class="item-entry-form">
    <label for="">Card name</label>
    <input type="text" name="card_name" value="<%= item.card_name %>">
    <label for="">Set</label>
@@ -54,5 +54,5 @@
    <label for="">Price</label>
    <input type="number" name="shipping_2_price" value="<%= item.shipping_2_price %>">
    
-   <button>update</button>
+   <button class="update-btn">update</button>
 </form>

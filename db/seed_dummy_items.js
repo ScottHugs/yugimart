@@ -104,7 +104,7 @@ const userNames = [
 
   
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
 
     let shippinIndex = _.random(2)
 
@@ -113,7 +113,7 @@ for (let i = 0; i < 10; i++) {
     let rarity = _.sample(rarities)
     let condition = _.sample(conditions)
     let language = 'ENG'
-    let sellerUserName = _.sample(userNames)
+    let sellerUsername = _.sample(userNames)
     let price = `${_.random((150))}.00`
     let offers = Math.random() >= 0.5
     let img = 'https://fakeimg.pl/200x300'
@@ -124,12 +124,12 @@ for (let i = 0; i < 10; i++) {
 
     let sql = `
     INSERT INTO singles 
-    (card_name, set, rarity, condition, language, seller_user_name, price, offers, img, shipping_1, shipping_1_price, shipping_2, shipping_2_price)
+    (card_name, set, rarity, condition, language, seller_username, price, offers, img, shipping_1, shipping_1_price, shipping_2, shipping_2_price)
     VALUES
     ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
     `
 
-    db.query(sql, [cardName, set, rarity, condition, language, sellerUserName, price, offers, img, shipping1, shipping1Price, shipping2, shipping2Price], (err, result) => {
+    db.query(sql, [cardName, set, rarity, condition, language, sellerUsername, price, offers, img, shipping1, shipping1Price, shipping2, shipping2Price], (err, result) => {
         if (err) {
             console.log(err)
         }

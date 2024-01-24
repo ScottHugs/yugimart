@@ -20,9 +20,11 @@
             <form action="/logout?_method=delete" method="post">
                 <button>Logout</button>
             </form>
+            
+
 
         <% } else { %>
-
+        
             <form action="/login">
                 <button>Login</button>
             </form>
@@ -30,13 +32,21 @@
             <form action="/login/new" method="get">
                 <button>Create Account</button>
             </form>
-
+            
         <% } %>    
+
+        
     </header>
+    
+    <h2 class="title">YUGIMART</h3>
 
     <div class="main-content">
 
         <%- body %>
     </div>
+
+    <footer>
+        <h4>yugimart collective</h6>
+    </footer>
 </body>
 </html>

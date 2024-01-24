@@ -1,6 +1,6 @@
 <h2>All Cards for Sale:</h2>
 
-<form action="">
+<form action="/market/search" method="post" class="search-bar">
     <label for="">Search a card name:</label>
     <input type="text" name="card_name">
 
@@ -15,25 +15,26 @@
 <table class="singles-table">
     <thead>
         <tr>
-            <th>Card Name</th>
+            <th><a href="/market/ordered/card_name">Card Name</a></th>
             <th>Set</th>
             <th>Rarity</th>
             <th>Condition</th>
             <th>Language</th>
             <th>Seller</th>
-            <th>Price</th>
+            <th><a href="/market/ordered/price">Price</a></th>
             <th>BUY</th>
         </tr>
     </thead>
     <tbody>
         <% for (let item of items) { %>
             <tr>
+                
                 <th><%= item.card_name %></th>
                 <th><%= item.set %></th>
                 <th><%= item.rarity %></th>
                 <th><%= item.condition %></th>
                 <th><%= item.language %></th>
-                <th><%= item.seller_username %></th>
+                <th><a href="/market/<%= item.seller_username %>"><%= item.seller_username %></a></th>
                 <th><%= item.price %></th>
                 <th>
                     <form action="/market/item/<%= item.id %>">

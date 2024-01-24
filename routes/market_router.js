@@ -15,11 +15,65 @@ router.get('/market', (req, res) => {
 
         const items_for_sale = result.rows
 
-        const sqlToGetUsers = `SELECT * FROM users;`
+        res.render('market', {items: items_for_sale})
+    })
 
-        db.query(sqlToGetUsers, (err, users) => {
+})
 
-        })
+router.post('/market/search', (req, res) => {
+
+    const cardSearch = req.body.card_name
+    const sql =`
+    SELECT * FROM singles
+    WHERE card_name = $1;
+    `
+
+    db.query(sql, [cardSearch], (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+
+        const items_for_sale = result.rows
+
+        res.render('market', {items: items_for_sale})
+    })
+
+})
+
+router.get('/market/:seller', (req, res) => {
+    
+    const sellerUsername = req.params.seller
+    const sql =`
+    SELECT * FROM singles
+    WHERE seller_username = $1;
+    `
+
+    db.query(sql, [sellerUsername], (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+
+        const items_for_sale = result.rows
+
+        res.render('market', {items: items_for_sale})
+    })
+
+})
+
+router.get('/market/ordered/:by', (req, res) => {
+    
+    const orderedBy = req.params.by
+    const sql =`
+    SELECT * FROM singles
+    ORDER BY ${orderedBy} ASC;
+    `
+
+    db.query(sql, (err, result) => {
+        if (err) {
+            console.log(err)
+        }
+
+        const items_for_sale = result.rows
 
         res.render('market', {items: items_for_sale})
     })
@@ -77,7 +131,7 @@ router.post('/market/item', ensureLoggedIn, (req, res) => {
         }) 
 
     }) 
-    
+
 })
 
 router.delete('/market/item/:id/buy', (req, res) => {

@@ -1,0 +1,58 @@
+<h2>edit item</h2>
+
+<form action="/market/item/<%= item.id%>?_method=put" method="post" name="item-entry-form">
+   <label for="">Card name</label>
+   <input type="text" name="card_name" value="<%= item.card_name %>">
+   <label for="">Set</label>
+   <input type="text" name="set" value="<%= item.set%>">   
+   <label for="">Rarity</label>
+   <select name="rarity" value="<%= item.rarity %>">
+        <option value="C">Common</option>
+        <option value="SR">Super Rare</option>
+        <option value="UR">Ultra Rare</option>
+        <option value="PS">Prismatic Secret</option>
+        <option value="CR">Collectors Rare</option>
+   </select>
+   <label for="">Condition</label>
+   <select name="condition" value="<%= item.condition %>">
+       <option value="PL">Played</option>
+       <option value="LP">Lightly Played</option>
+       <option value="GD">Good</option>
+       <option value="EX">Excellent</option>
+       <option value="NM">Near Mint</option>
+       <option value="M">Mint</option>
+   </select>
+   <label for="">Language</label>
+   <select name="language" value="<%= item.language %>">
+        <option value="ENG">English</option>
+        <option value="FRE">French</option>
+        <option value="GER">German</option>
+        <option value="ITA">Italian</option>
+   </select>
+   <label for="">Price</label>
+   <input type="number" name="price" value="<%= item.price %>">
+   <label for="">Taking Offers?</label>
+   <input type="checkbox" name="offers" value="<%= item.offers %>">
+   <label for="">Image File</label>
+   <input type="text" name="img" value="<%= item.img %>">
+   <label for="" >Shipping Option 1</label>
+   <select name="shipping_1" value="<%= item.shipping_1 %>">
+        <option value="standard">Standard</option>
+        <option value="tracked">Tracked</option>
+        <option value="express">Express</option>
+        <option value="local">Local Pickup</option>
+   </select>
+   <label for="">Price</label>
+   <input type="number" name="shipping_1_price" value="<%= item.shipping_1_price %>">
+   <label for="">Shipping Option 2</label>
+   <select name="shipping_2" value="<%= item.shipping_2 %>">
+        <option value="standard">Standard</option>
+        <option value="tracked">Tracked</option>
+        <option value="express">Express</option>
+        <option value="local">Local Pickup</option>
+    </select>
+   <label for="">Price</label>
+   <input type="number" name="shipping_2_price" value="<%= item.shipping_2_price %>">
+   
+   <button>update</button>
+</form>

@@ -24,6 +24,15 @@
     </section>    
 </div>
 
+<div>
+    <form action="/market/item/<%= item.id %>/edit" method="get">
+        <button>Edit</button>
+    </form>
+    <form action="/market/item/<%= item.id %>?_method=delete" method="post">
+        <button>Delete Item Listing</button>
+    </form>
+</div>
+
 <p>
     card details...
 </p>

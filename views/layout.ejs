@@ -10,9 +10,26 @@
 <body>
     <header>
         <form action="/">
-            <button>home</button>
+            <button>Home</button>
         </form>
+
+        <% if (currentUserDetails) { %>
+            
+            <p>Logged in as: <%= currentUserDetails.username%></p>
+
+            <form action="/logout?_method=delete" method="post">
+                <button>Logout</button>
+            </form>
+
+        <% } else { %>
+
+            <form action="/login">
+                <button>Login</button>
+            </form>
+
+        <% } %>    
     </header>
+
     <div class="main-content">
 
         <%- body %>

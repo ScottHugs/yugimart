@@ -13,7 +13,7 @@ bcrypt.genSalt(saltRound, (err, salt) => {
 
         const sql =`
          INSERT INTO users
-         (user_name, email, password_digest)
+         (username, email, password_digest)
          VALUES
          ('${userName}', '${email}', '${hashedPass}')
          RETURNING id;

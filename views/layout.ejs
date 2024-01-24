@@ -13,7 +13,7 @@
             <button>Home</button>
         </form>
 
-        <% if (currentUserDetails) { %>
+        <% if (isLoggedIn) { %>
             
             <p>Logged in as: <%= currentUserDetails.username%></p>
 
@@ -25,6 +25,10 @@
 
             <form action="/login">
                 <button>Login</button>
+            </form>
+
+            <form action="/login/new" method="get">
+                <button>Create Account</button>
             </form>
 
         <% } %>    

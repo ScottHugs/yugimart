@@ -4,7 +4,8 @@ const db = require('../db/index')
 
 function setCurrentUser(req, res, next) {
 
-    res.locals.currentUserDetails = null
+    res.locals.currentUserDetails = {}
+    res.locals.isLoggedIn = false
 
     let userId = req.session.userId
 
@@ -23,6 +24,7 @@ function setCurrentUser(req, res, next) {
         } 
 
         res.locals.currentUserDetails = result.rows[0]
+        res.locals.isLoggedIn = true
         next() 
 
     })

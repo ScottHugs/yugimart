@@ -17,9 +17,9 @@
         <h2>TOTAL: $<%= Number(item.price) + Number(item.shipping_1_price) %></h2>
 
 
-        <div class="buy-button">
+       <form action="/market/item/<%= item.id %>/buy?_method=delete" method="post">
             <button>BUY</button>
-        </div>
+       </form>
 
     </section>    
 </div>

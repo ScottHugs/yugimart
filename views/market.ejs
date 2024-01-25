@@ -29,13 +29,13 @@
         <% for (let item of items) { %>
             <tr>
                 
-                <th><%= item.card_name %></th>
+                <th class="bold"><%= item.card_name %></th>
                 <th><%= item.set %></th>
                 <th><%= item.rarity %></th>
                 <th><%= item.condition %></th>
                 <th><%= item.language %></th>
                 <th><a href="/market/<%= item.seller_username %>"><%= item.seller_username %></a></th>
-                <th><%= item.price %></th>
+                <th class="bold">$<%= item.price %></th>
                 <th>
                     <form action="/market/item/<%= item.id %>">
                         <button>item</button>

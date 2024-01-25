@@ -8,6 +8,7 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-content: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 header button, p {
@@ -21,6 +22,7 @@ header button, p {
    padding: 10px;
    border-top: 1px solid #009879;
    border-bottom: 1px solid #009879;
+   font-family: 'Poppins', sans-serif;
 }
 
 
@@ -30,6 +32,7 @@ header button, p {
     justify-content: center;
     align-items: center;
     margin: 20px; 
+    font-family: 'Poppins', sans-serif;
 }
 
 .search-bar {
@@ -83,6 +86,23 @@ img {
     border-bottom: 2px solid #009879;
 }
 
+.singles-table thead a {
+    color: #f3f3f3;
+}
+
+th {
+    font-weight: 400;
+}
+
+thead th {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* .card-name-display {
     position: relative;
     display: inline-block;
@@ -126,4 +146,5 @@ footer {
     margin-top: 200px;
     margin-bottom: 50px; 
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }

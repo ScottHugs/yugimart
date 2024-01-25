@@ -46,7 +46,7 @@ router.post('/login', (req, res) => {
 
             req.session.userId = result.rows[0].id
             
-            res.redirect('/')
+            res.redirect('/market')
 
         })
 
@@ -59,7 +59,7 @@ router.delete('/logout', (req, res) => {
 
     req.session.userId = null
 
-    res.redirect('/')
+    res.redirect('/market')
 
 })
 

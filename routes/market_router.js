@@ -113,9 +113,6 @@ router.post('/market/item', ensureLoggedIn, (req, res) => {
         const shipping2 = req.body.shipping_2
         const shipping2Price = Number(req.body.shipping_2_price)
     
-        console.log(cardName, set, rarity, condition, language, price, offers, img, shipping1, shipping1Price, shipping2, shipping2Price)
-    
-    
         const sql = `
         INSERT INTO singles 
         (card_name, set, rarity, condition, language, seller_username, price, offers, img, shipping_1, shipping_1_price, shipping_2, shipping_2_price)
@@ -159,7 +156,6 @@ router.get('/market/item/:id', (req, res) => {
       SELECT * FROM singles
       WHERE id = $1;
     `
-    console.log(`id is ${id}`)
 
     db.query(sql, [id], (err, result) => {
         if (err) {
@@ -167,8 +163,6 @@ router.get('/market/item/:id', (req, res) => {
         }
 
         const itemDetails = result.rows[0]
-
-        console.log(itemDetails)
 
         res.render('item', {item: itemDetails})
 
@@ -211,9 +205,6 @@ router.put('/market/item/:id', ensureLoggedIn, (req, res) => {
     const shipping1Price = Number(req.body.shipping_1_price)
     const shipping2 = req.body.shipping_2
     const shipping2Price = Number(req.body.shipping_2_price)
-
-    console.log(cardName, set, rarity, condition, language, price, offers, img, shipping1, shipping1Price, shipping2, shipping2Price)
-
 
     const sql = `
     UPDATE singles 

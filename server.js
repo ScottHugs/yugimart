@@ -2,15 +2,12 @@ require('dotenv').config()
 
 const express = require('express')
 const app = express()
-const port = 7061
+const port = process.env.PORT || 3000
 const expresslayouts = require('express-ejs-layouts')
 const methodOverride = require('method-override')
 const session = require('express-session')
-const db = require('./db/index')
-const bcrypt = require('bcrypt')
 
 const setCurrentUser = require('./middlewares/set_current_user')
-const ensureLoggedIn = require('./middlewares/ensure_logged_in')
 
 const marketRouter = require('./routes/market_router')
 const sessionRouter = require('./routes/session_router')
@@ -28,7 +25,7 @@ app.use(expresslayouts)
 app.use(express.urlencoded({ extended:true }))
 
 app.use(session({
-    secret: process.env.SECRET, 
+    secret: process.env.SECRET || 'mistyrose', 
     resave: false,
     saveUninitialized: true
 }))
@@ -36,7 +33,7 @@ app.use(session({
 app.use(setCurrentUser)
 
 app.get('/', (req, res) => {
-    res.redirect('/market')
+    res.render('landing')
 })
 
 

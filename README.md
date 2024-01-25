@@ -2,7 +2,7 @@
 
 YUGIMART is an AUS based card market for the centralised buying and selling of yugioh cards. Sick of paying 200% in ebay fees or getting left on read for those FB marketplace meetups... Then come hangout at YUGIMART.
 
-## Welcome to [YUGIMART]!(https://yugimart.onrender.com/)
+## Welcome to [YUGIMART](https://yugimart.onrender.com/)
 
 ## About
 
